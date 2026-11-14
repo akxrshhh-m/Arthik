@@ -144,7 +144,7 @@ const Analytics = () => {
           marginBottom: '1.75rem'
         }}>
           {/* Monthly Inflow vs Outflow Chart */}
-          <div className="card">
+          <div className="card dashboard-panel">
             <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.25rem' }}>
               Historical Monthly Income vs Expenses
             </h4>
@@ -182,7 +182,7 @@ const Analytics = () => {
           </div>
 
           {/* Category-Wise Expense Distribution */}
-          <div className="card">
+          <div className="card dashboard-panel">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
               <div>
                 <h4 style={{ fontSize: '1rem', fontWeight: 700 }}>
@@ -233,7 +233,7 @@ const Analytics = () => {
         </div>
 
         {/* ADSA MAX HEAP: TOP 5 SPENDING CATEGORIES */}
-        <div className="card">
+        <div className="card dashboard-panel">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
             <div>
               <h4 style={{ fontSize: '1.05rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

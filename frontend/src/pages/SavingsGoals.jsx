@@ -124,12 +124,15 @@ const SavingsGoals = () => {
               const isCompleted = goal.status === 'COMPLETED' || current >= target;
 
               return (
-                <div key={goal.id} className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div
+  key={goal.id}
+  className="card savings-goal-card"
+>
                   <div>
                     {/* Goal Header */}
                     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '0.875rem' }}>
                       <div>
-                        <span className="badge" style={{ backgroundColor: '#f1f5f9', color: '#64748b', marginBottom: '0.35rem' }}>
+                        <span className="badge savings-category-badge">
                           {goal.category || 'General'}
                         </span>
                         <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-main)' }}>
@@ -158,7 +161,7 @@ const SavingsGoals = () => {
                       </div>
                       <div style={{
                         height: '10px',
-                        backgroundColor: '#f1f5f9',
+                        backgroundColor: 'rgba(255,255,255,0.13)',
                         borderRadius: 'var(--radius-full)',
                         overflow: 'hidden'
                       }}>
@@ -173,15 +176,7 @@ const SavingsGoals = () => {
                     </div>
 
                     {/* Amounts Breakdown */}
-                    <div style={{
-                      display: 'grid',
-                      gridTemplateColumns: '1fr 1fr',
-                      gap: '0.75rem',
-                      padding: '0.875rem',
-                      backgroundColor: '#f8fafc',
-                      borderRadius: 'var(--radius-md)',
-                      marginBottom: '1.25rem'
-                    }}>
+                    <div className="savings-amount-breakdown">
                       <div>
                         <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block' }}>Saved So Far</span>
                         <strong className="currency-amount" style={{ fontSize: '1.05rem', color: 'var(--income-green)' }}>
@@ -227,15 +222,7 @@ const SavingsGoals = () => {
               );
             })
           ) : (
-            <div style={{
-              gridColumn: '1 / -1',
-              padding: '3.5rem',
-              textAlign: 'center',
-              backgroundColor: '#ffffff',
-              borderRadius: 'var(--radius-lg)',
-              border: '1px dashed var(--border-subtle)',
-              color: 'var(--text-muted)'
-            }}>
+            <div className="savings-empty-state">
               <Target size={36} style={{ margin: '0 auto 0.75rem', color: '#cbd5e1' }} />
               <h4 style={{ fontWeight: 600, color: 'var(--text-main)' }}>No savings goals created yet</h4>
               <p style={{ fontSize: '0.8125rem', marginTop: '0.25rem', marginBottom: '1rem' }}>
@@ -252,7 +239,7 @@ const SavingsGoals = () => {
         {/* CONTRIBUTION HISTORY MODAL / DRAWER */}
         {historyGoal && (
           <div className="modal-overlay" onClick={() => setHistoryGoal(null)}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-content savings-history-modal" onClick={(e) => e.stopPropagation()}>
               <div className="modal-header">
                 <div>
                   <h3 style={{ fontSize: '1.15rem', fontWeight: 700 }}>Deposit History</h3>
@@ -272,17 +259,9 @@ const SavingsGoals = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     {contributions.map((c) => (
                       <div
-                        key={c.id}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          padding: '0.75rem 1rem',
-                          backgroundColor: '#f8fafc',
-                          borderRadius: 'var(--radius-md)',
-                          border: '1px solid var(--border-subtle)'
-                        }}
-                      >
+  key={c.id}
+  className="savings-history-item"
+>
                         <div>
                           <strong className="currency-amount" style={{ color: 'var(--income-green)', fontSize: '0.95rem' }}>
                             + {formatINR(c.amount)}

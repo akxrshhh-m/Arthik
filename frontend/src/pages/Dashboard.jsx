@@ -126,7 +126,7 @@ const Dashboard = () => {
           marginBottom: '1.75rem'
         }}>
           {/* Monthly Inflow vs Outflow Chart */}
-          <div className="card">
+          <div className="card dashboard-panel">
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
               <div>
                 <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-main)' }}>
@@ -174,7 +174,7 @@ const Dashboard = () => {
           </div>
 
           {/* Spending by Category Chart */}
-          <div className="card">
+          <div className="card dashboard-panel">
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
               <div>
                 <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-main)' }}>
@@ -225,7 +225,7 @@ const Dashboard = () => {
         </div>
 
         {/* 3. RECENT TRANSACTIONS TABLE */}
-        <div className="card">
+        <div className="card dashboard-panel">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
             <div>
               <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-main)' }}>

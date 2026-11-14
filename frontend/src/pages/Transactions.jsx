@@ -139,7 +139,7 @@ const Transactions = () => {
         )}
 
         {/* CONTROLS BAR: SEARCH, FILTERS & MERGE SORT SELECTION */}
-        <div className="card" style={{ marginBottom: '1.5rem', padding: '1.25rem' }}>
+        <div className="card transactions-panel transactions-filters">
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
@@ -216,7 +216,7 @@ const Transactions = () => {
                 <button
                   type="button"
                   onClick={() => setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc')}
-                  className="btn btn-secondary"
+                  className="btn btn-secondary transaction-sort-button"
                   title={`Order: ${sortOrder.toUpperCase()}`}
                   style={{ padding: '0.5rem 0.75rem' }}
                 >
@@ -229,11 +229,11 @@ const Transactions = () => {
         </div>
 
         {/* TRANSACTIONS TABLE */}
-        <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+        <div className="card transactions-panel transactions-table-panel">
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
               <thead>
-                <tr style={{ backgroundColor: '#f8fafc', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}>
+                <tr className="transactions-table-header">
                   <th style={{ padding: '1rem', fontWeight: 600 }}>Type</th>
                   <th style={{ padding: '1rem', fontWeight: 600 }}>Title & Description</th>
                   <th style={{ padding: '1rem', fontWeight: 600 }}>Category</th>
@@ -248,15 +248,7 @@ const Transactions = () => {
                   transactions.map((tx) => {
                     const isIncome = tx.type === 'INCOME';
                     return (
-                      <tr
-                        key={tx.id}
-                        style={{
-                          borderBottom: '1px solid #f1f5f9',
-                          transition: 'background-color 0.1s ease'
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f8fafc'}
-                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                      >
+                      <tr key={tx.id} className="transactions-table-row">
                         <td style={{ padding: '1rem' }}>
                           <span className={`badge ${isIncome ? 'badge-income' : 'badge-expense'}`}>
                             {isIncome ? <ArrowDownLeft size={12} /> : <ArrowUpRight size={12} />}
@@ -309,13 +301,13 @@ const Transactions = () => {
                         <td style={{ padding: '1rem', textAlign: 'center' }}>
                           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                             <button
-                              onClick={() => handleEdit(tx)}
-                              className="btn btn-secondary btn-sm"
-                              title="Edit"
-                              style={{ padding: '0.35rem 0.5rem' }}
-                            >
-                              <Edit2 size={14} />
-                            </button>
+  onClick={() => handleEdit(tx)}
+  className="btn btn-secondary btn-sm transaction-edit-button"
+  title="Edit"
+  style={{ padding: '0.35rem 0.5rem' }}
+>
+  <Edit2 size={14} />
+</button>
                             <button
                               onClick={() => handleDelete(tx.id)}
                               className="btn btn-danger btn-sm"

@@ -118,7 +118,7 @@ const Budgets = () => {
         )}
 
         {/* Overall Budget Overview Card */}
-        <div className="card" style={{ marginBottom: '1.75rem', backgroundColor: '#ffffff' }}>
+        <div className="card budget-panel budget-overview">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.75rem' }}>
             <div>
               <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>
@@ -141,7 +141,7 @@ const Budgets = () => {
           {/* Overall Progress Bar */}
           <div style={{
             height: '10px',
-            backgroundColor: '#e2e8f0',
+            backgroundColor: 'rgba(255,255,255,0.13)',
             borderRadius: 'var(--radius-full)',
             overflow: 'hidden',
             marginBottom: '0.5rem'
@@ -180,13 +180,11 @@ const Budgets = () => {
 
               return (
                 <div
-                  key={b.id}
-                  className="card"
-                  style={{
-                    border: isOverBudget ? '1px solid #fca5a5' : isWarning ? '1px solid #fde68a' : '1px solid var(--border-subtle)',
-                    backgroundColor: isOverBudget ? '#fffdfd' : '#ffffff'
-                  }}
-                >
+  key={b.id}
+  className={`card budget-panel budget-category-card ${
+    isOverBudget ? 'budget-over-limit' : isWarning ? 'budget-warning' : ''
+  }`}
+>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
                       <div style={{
@@ -269,7 +267,7 @@ const Budgets = () => {
                   {/* Spending Progress Bar */}
                   <div style={{
                     height: '8px',
-                    backgroundColor: '#f1f5f9',
+                    backgroundColor: 'rgba(255,255,255,0.13)',
                     borderRadius: 'var(--radius-full)',
                     overflow: 'hidden',
                     marginBottom: '0.625rem'
@@ -310,15 +308,7 @@ const Budgets = () => {
               );
             })
           ) : (
-            <div style={{
-              gridColumn: '1 / -1',
-              padding: '3.5rem',
-              textAlign: 'center',
-              backgroundColor: '#ffffff',
-              borderRadius: 'var(--radius-lg)',
-              border: '1px dashed var(--border-subtle)',
-              color: 'var(--text-muted)'
-            }}>
+            <div className="budget-empty-state">
               <PieChart size={36} style={{ margin: '0 auto 0.75rem', color: '#cbd5e1' }} />
               <h4 style={{ fontWeight: 600, color: 'var(--text-main)' }}>No budgets set for {selectedMonth}</h4>
               <p style={{ fontSize: '0.8125rem', marginTop: '0.25rem', marginBottom: '1rem' }}>

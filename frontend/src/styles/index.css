@@ -267,3 +267,1172 @@ button, input, select, textarea {
   gap: 0.75rem;
   background-color: #f8fafc;
 }
+html, body, #root {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image:
+        linear-gradient(
+            rgba(10, 20, 40, 0.45),
+            rgba(10, 20, 40, 0.45)
+        ),
+        url("/images/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* =========================================
+   ARTHIK — PREMIUM GLASS DESIGN
+   Phase 1: Navbar and KPI cards
+========================================= */
+
+/* Navbar */
+.app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  padding: 1.25rem 2rem;
+
+  background: rgba(15, 23, 42, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.app-navbar__heading h2 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.app-navbar__heading p {
+  margin-top: 4px;
+  color: #cbd5e1;
+  font-size: 0.8125rem;
+}
+
+.app-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-navbar__period {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+
+  background: rgba(255, 255, 255, 0.09);
+  color: #e2e8f0;
+
+  font-size: 0.775rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.app-navbar__period svg {
+  color: #34d399;
+}
+
+.app-navbar__add-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  box-shadow: 0 3px 14px rgba(16, 185, 129, 0.25);
+}
+
+/* KPI cards */
+/* =========================================
+   ARTHIK — DARK GLASS DASHBOARD
+========================================= */
+
+/* KPI cards */
+.stat-card {
+  background: rgba(9, 31, 45, 0.84) !important;
+  border: 1px solid rgba(94, 234, 212, 0.22) !important;
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem !important;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+
+  transition: transform 0.2s ease, border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(94, 234, 212, 0.48) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card__top,
+.stat-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.stat-card__label {
+  color: #B8CDD8;
+  font-size: 0.79rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+}
+
+.stat-card__icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.stat-card__amount {
+  color: #F8FAFC !important;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+}
+
+.stat-card__badge {
+  flex-shrink: 0;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Dashboard chart and transaction panels */
+.dashboard-panel {
+  background: rgba(9, 31, 45, 0.88) !important;
+  border: 1px solid rgba(94, 234, 212, 0.20) !important;
+  border-radius: 17px;
+
+  color: #F8FAFC;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+  --text-main: #F1F5F9;
+  --text-muted: #AFC4D0;
+
+  background: rgba(9, 31, 45, 0.88) !important;
+  border: 1px solid rgba(94, 234, 212, 0.20) !important;
+  border-radius: 17px;
+  color: #F8FAFC;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+/* Panel headings and descriptions */
+.dashboard-panel h4 {
+  color: #F8FAFC !important;
+}
+
+.dashboard-panel p {
+  color: #B8CDD8 !important;
+}
+
+/* Table text */
+.dashboard-panel th {
+  color: #AFC4D0 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.dashboard-panel td {
+  color: #E2E8F0 !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* Chart axes and grid */
+.dashboard-panel .recharts-cartesian-axis-tick-value {
+  fill: #B8CDD8 !important;
+}
+
+.dashboard-panel .recharts-cartesian-grid line {
+  stroke: rgba(203, 213, 225, 0.16) !important;
+}
+
+/* Responsive KPI cards */
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 1.1rem !important;
+  }
+
+  .stat-card__amount {
+    font-size: 1.35rem;
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .app-navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem 1.25rem;
+  }
+
+  .app-navbar__actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    padding: 1.1rem !important;
+  }
+
+  .stat-card__amount {
+    font-size: 1.35rem;
+  }
+}
+/* Fix white hover/selection background in dark dashboard tables */
+.dashboard-panel table tbody tr:hover,
+.dashboard-panel table tbody tr:focus-within,
+.dashboard-panel table tbody tr.selected,
+.dashboard-panel table tbody tr[aria-selected="true"] {
+  background: rgba(94, 234, 212, 0.10) !important;
+  color: #F1F5F9 !important;
+}
+
+.dashboard-panel table tbody tr:hover td,
+.dashboard-panel table tbody tr:focus-within td,
+.dashboard-panel table tbody tr.selected td,
+.dashboard-panel table tbody tr[aria-selected="true"] td {
+  background: transparent !important;
+  color: #F1F5F9 !important;
+}
+
+/* Keep transaction text readable */
+.dashboard-panel table tbody tr:hover *,
+.dashboard-panel table tbody tr:focus-within * {
+  color: inherit;
+}
+/* =================================
+   TRANSACTIONS PAGE – DARK GLASS
+================================= */
+
+.transactions-panel {
+  --text-main: #F1F5F9;
+  --text-muted: #AFC4D0;
+
+  background: rgba(9, 31, 45, 0.88) !important;
+  color: #F1F5F9;
+  border: 1px solid rgba(94, 234, 212, 0.20) !important;
+  border-radius: 17px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+.transactions-filters {
+  padding: 1.25rem !important;
+  margin-bottom: 1.5rem;
+}
+
+.transactions-table-panel {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.transactions-info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0.875rem 1.25rem;
+  background: rgba(12, 48, 65, 0.88);
+  border: 1px solid rgba(94, 234, 212, 0.22);
+  border-radius: 12px;
+  color: #DCEBFA;
+  font-size: 0.8125rem;
+  backdrop-filter: blur(16px);
+}
+
+.transactions-info-banner svg {
+  flex-shrink: 0;
+  color: #5EEAD4;
+}
+
+.transactions-panel .form-label {
+  color: #CBD5E1;
+}
+
+.transactions-panel .form-control {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #F1F5F9;
+}
+
+.transactions-panel .form-control:focus {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: #5EEAD4;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.12);
+}
+
+.transactions-panel select option {
+  background: #102B3A;
+  color: #F1F5F9;
+}
+
+.transactions-panel input::placeholder {
+  color: #8299A8;
+}
+
+.transactions-table-panel table {
+  color: #F1F5F9;
+}
+
+.transactions-table-header {
+  background: rgba(255, 255, 255, 0.06);
+  color: #B8CDD8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.transactions-table-header th {
+  padding: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.transactions-table-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.transactions-table-row:hover {
+  background: rgba(94, 234, 212, 0.09) !important;
+}
+
+.transactions-table-row td {
+  background: transparent;
+  color: #DCE6EE;
+}
+
+.transactions-table-row strong {
+  color: #F1F5F9 !important;
+}
+
+.transactions-table-row span:not(.badge) {
+  color: inherit;
+}
+
+.transactions-table-row .currency-amount {
+  font-weight: 700;
+}
+
+.transactions-table-row .badge {
+  white-space: nowrap;
+}
+/* =================================
+   BUDGET PLANNER – DARK GLASS THEME
+================================= */
+
+.budget-panel {
+  --text-main: #F1F5F9;
+  --text-muted: #AFC4D0;
+
+  background: rgba(9, 31, 45, 0.88) !important;
+  color: #F1F5F9;
+  border: 1px solid rgba(94, 234, 212, 0.20) !important;
+  border-radius: 17px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+.budget-overview {
+  margin-bottom: 1.75rem;
+  padding: 1.5rem;
+}
+
+.budget-overview h3,
+.budget-category-card h4 {
+  color: #F1F5F9;
+}
+
+.budget-overview p,
+.budget-category-card span {
+  color: #AFC4D0;
+}
+
+.budget-category-card {
+  padding: 1.4rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.budget-category-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(94, 234, 212, 0.42) !important;
+}
+
+.budget-category-card.budget-warning {
+  border-color: rgba(245, 158, 11, 0.42) !important;
+}
+
+.budget-category-card.budget-over-limit {
+  border-color: rgba(248, 113, 113, 0.48) !important;
+}
+
+.budget-category-card strong {
+  color: #F1F5F9;
+}
+
+.budget-category-card .btn {
+  backdrop-filter: blur(8px);
+}
+
+.budget-empty-state {
+  grid-column: 1 / -1;
+  padding: 3.5rem;
+  text-align: center;
+  background: rgba(9, 31, 45, 0.88);
+  border: 1px dashed rgba(94, 234, 212, 0.30);
+  border-radius: 17px;
+  color: #AFC4D0;
+  backdrop-filter: blur(20px);
+}
+
+.budget-empty-state h4 {
+  color: #F1F5F9;
+}
+
+.budget-empty-state p {
+  color: #AFC4D0;
+}
+
+/* Budget month selector */
+.page-wrapper > div:first-child .form-control {
+  background: rgba(9, 31, 45, 0.88);
+  color: #F1F5F9;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.page-wrapper > div:first-child .form-control:focus {
+  border-color: #5EEAD4;
+  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.12);
+}
+
+.page-wrapper > div:first-child .form-control::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+/* =================================
+   SAVINGS GOALS – DARK GLASS THEME
+================================= */
+
+.savings-goal-card {
+  --text-main: #F1F5F9;
+  --text-muted: #AFC4D0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: rgba(9, 31, 45, 0.88) !important;
+  color: #F1F5F9;
+  border: 1px solid rgba(94, 234, 212, 0.20) !important;
+  border-radius: 17px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.savings-goal-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(94, 234, 212, 0.45) !important;
+}
+
+.savings-goal-card h4 {
+  color: #F1F5F9 !important;
+}
+
+.savings-category-badge {
+  background: rgba(94, 234, 212, 0.12) !important;
+  color: #5EEAD4 !important;
+  border: 1px solid rgba(94, 234, 212, 0.2);
+  margin-bottom: 0.35rem;
+}
+
+.savings-amount-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 0.875rem;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(94, 234, 212, 0.12);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+}
+
+.savings-amount-breakdown span {
+  color: #AFC4D0 !important;
+}
+
+.savings-amount-breakdown strong {
+  color: #F1F5F9;
+}
+
+.savings-goal-card > div:last-child {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.savings-empty-state {
+  grid-column: 1 / -1;
+  padding: 3.5rem;
+  text-align: center;
+  background: rgba(9, 31, 45, 0.88);
+  border: 1px dashed rgba(94, 234, 212, 0.30);
+  border-radius: 17px;
+  color: #AFC4D0;
+  backdrop-filter: blur(20px);
+}
+
+.savings-empty-state h4 {
+  color: #F1F5F9 !important;
+}
+
+.savings-empty-state p {
+  color: #AFC4D0;
+}
+
+/* Contribution history */
+
+.savings-history-modal {
+  background: rgba(9, 31, 45, 0.97) !important;
+  color: #F1F5F9;
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.savings-history-modal h3 {
+  color: #F1F5F9;
+}
+
+.savings-history-modal .modal-header,
+.savings-history-modal .modal-footer {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.savings-history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.055);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(94, 234, 212, 0.15);
+}
+
+.savings-history-modal .modal-body {
+  color: #F1F5F9;
+}
+
+.savings-history-modal .modal-body p,
+.savings-history-item span {
+  color: #AFC4D0;
+}
+/* Savings Goal – Deposit History Button */
+
+.savings-goal-card .btn-secondary {
+  background: rgba(94, 234, 212, 0.10) !important;
+  color: #5EEAD4 !important;
+  border: 1px solid rgba(94, 234, 212, 0.30) !important;
+}
+
+.savings-goal-card .btn-secondary svg {
+  color: #5EEAD4 !important;
+  stroke: #5EEAD4 !important;
+}
+
+.savings-goal-card .btn-secondary:hover {
+  background: rgba(94, 234, 212, 0.20) !important;
+  border-color: #5EEAD4 !important;
+}
+/* =========================================
+   ARTHIK – PREMIUM FINTECH LOGIN
+========================================= */
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  background: #071923;
+  color: #F1F5F9;
+  font-family: inherit;
+}
+
+/* LEFT BRANDING */
+
+.login-brand-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.5rem 7%;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 75%, rgba(16, 185, 129, 0.10), transparent 45%),
+    #071923;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.login-brand-content {
+  width: 100%;
+  max-width: 610px;
+  margin: auto;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5.5rem;
+}
+
+.login-brand-icon {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #10B981;
+  color: #06251F;
+  border-radius: 11px;
+}
+
+.login-brand > span {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #F8FAFC;
+}
+
+.login-eyebrow {
+  display: block;
+  color: #5EEAD4;
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 1.2rem;
+}
+
+.login-headline h1 {
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  font-weight: 750;
+  color: #F8FAFC;
+  margin-bottom: 1.4rem;
+}
+
+.login-headline h1 span {
+  color: #10B981;
+}
+
+.login-headline p {
+  max-width: 460px;
+  color: #AFC4D0;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* FINANCIAL VISUAL */
+
+.login-visual {
+  margin-top: 4rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 15px;
+}
+
+.login-visual-top,
+.login-chart-label,
+.login-chart-months,
+.login-visual-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-visual-top {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: #AFC4D0;
+  font-weight: 700;
+}
+
+.login-live-indicator {
+  color: #5EEAD4;
+  font-size: 0.6rem;
+}
+
+.login-chart-label {
+  margin-top: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.login-chart-label span {
+  color: #AFC4D0;
+  font-size: 0.85rem;
+}
+
+.login-chart-label strong {
+  color: #F1F5F9;
+  font-size: 0.9rem;
+}
+
+.login-chart-bars {
+  height: 105px;
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: 0 2px;
+}
+
+.login-chart-bar {
+  flex: 1;
+  min-width: 5px;
+  background: linear-gradient(
+    180deg,
+    #34D399 0%,
+    rgba(16,185,129,0.25) 100%
+  );
+  border-radius: 4px 4px 0 0;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.login-chart-bar:hover {
+  opacity: 1;
+}
+
+.login-chart-months {
+  padding-top: 10px;
+  color: #718B99;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.login-visual-footer {
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.login-visual-footer > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #AFC4D0;
+  font-size: 0.72rem;
+}
+
+.login-footer-dot {
+  width: 6px;
+  height: 6px;
+  background: #10B981;
+  border-radius: 50%;
+}
+
+.login-brand-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #718B99;
+  font-size: 0.59rem;
+  letter-spacing: 0.10em;
+  font-weight: 600;
+}
+
+/* RIGHT LOGIN FORM */
+
+.login-form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  background: #0B202B;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-form-heading {
+  margin-bottom: 2.5rem;
+}
+
+.login-form-heading h2 {
+  font-size: 2.25rem;
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  color: #F8FAFC;
+  margin-bottom: 0.65rem;
+}
+
+.login-form-heading p {
+  color: #AFC4D0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* INPUTS */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-field label {
+  display: block;
+  color: #D5E1E8;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.045em;
+  margin-bottom: 0.65rem;
+}
+
+.login-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 53px;
+  padding: 0 15px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 9px;
+  background: rgba(255,255,255,0.035);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.login-input-wrapper:focus-within {
+  border-color: #10B981;
+  background: rgba(16,185,129,0.055);
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.09);
+}
+
+.login-input-wrapper svg {
+  flex-shrink: 0;
+  color: #7F9BAA;
+}
+
+.login-input-wrapper input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #F1F5F9;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.login-input-wrapper input::placeholder {
+  color: #718B99;
+}
+
+/* SIGN IN BUTTON */
+
+.login-submit-button {
+  width: 100%;
+  height: 54px;
+  margin-top: 0.4rem;
+  padding: 0 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 9px;
+  background: #10B981;
+  color: #05251E;
+  font-size: 0.9rem;
+  font-weight: 750;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.login-submit-button:hover:not(:disabled) {
+  background: #34D399;
+  transform: translateY(-1px);
+}
+
+.login-submit-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* REGISTER */
+
+.login-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  font-size: 0.84rem;
+  color: #AFC4D0;
+}
+
+.login-register a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #5EEAD4;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.login-register a:hover {
+  color: #A7F3D0;
+}
+
+/* DEMO ACCESS */
+
+.login-demo {
+  margin-top: 2rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 9px;
+  background: rgba(255,255,255,0.035);
+}
+
+.login-demo-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #5EEAD4;
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+
+.login-demo p {
+  color: #AFC4D0;
+  font-size: 0.78rem;
+  margin-top: 0.4rem;
+}
+
+.login-demo strong {
+  color: #E2E8F0;
+  font-weight: 600;
+}
+
+.login-security-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 2rem;
+  color: #718B99;
+  font-size: 0.72rem;
+}
+
+/* ERROR */
+
+.login-error {
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.3rem;
+  background: rgba(248,113,113,0.10);
+  border: 1px solid rgba(248,113,113,0.25);
+  border-radius: 8px;
+  color: #FCA5A5;
+  font-size: 0.82rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .login-brand-section {
+    padding: 2.5rem 8%;
+  }
+
+  .login-brand {
+    margin-bottom: 3.5rem;
+  }
+
+  .login-visual {
+    margin-top: 2.5rem;
+  }
+
+  .login-form-section {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-brand-section {
+    min-height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .login-brand {
+    margin-bottom: 2.5rem;
+  }
+
+  .login-headline h1 {
+    font-size: 2.6rem;
+  }
+
+  .login-headline p {
+    font-size: 0.9rem;
+  }
+
+  .login-visual {
+    margin-top: 2rem;
+  }
+
+  .login-brand-bottom {
+    display: none;
+  }
+
+  .login-form-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .login-form-heading h2 {
+    font-size: 1.9rem;
+  }
+}
+/* Transaction table – Edit action button */
+.transaction-edit-button {
+  background: rgba(94, 234, 212, 0.10) !important;
+  color: #5EEAD4 !important;
+  border: 1px solid rgba(94, 234, 212, 0.30) !important;
+  border-radius: 8px !important;
+  min-width: 38px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.transaction-edit-button svg {
+  color: #5EEAD4 !important;
+  stroke: #5EEAD4;
+}
+
+.transaction-edit-button:hover {
+  background: rgba(94, 234, 212, 0.20) !important;
+  border-color: #5EEAD4 !important;
+  transform: translateY(-2px);
+}
+/* Transaction sort direction button */
+.transaction-sort-button {
+  background: rgba(94, 234, 212, 0.10) !important;
+  color: #5EEAD4 !important;
+  border: 1px solid rgba(94, 234, 212, 0.30) !important;
+  border-radius: 10px !important;
+  min-height: 44px;
+  min-width: 110px;
+  font-weight: 650;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.transaction-sort-button svg {
+  color: #5EEAD4 !important;
+  stroke: #5EEAD4 !important;
+}
+
+.transaction-sort-button:hover {
+  background: rgba(94, 234, 212, 0.20) !important;
+  border-color: #5EEAD4 !important;
+  transform: translateY(-1px);
+}
+/* Budget Planner – Edit buttons */
+.budget-category-card .btn-secondary {
+  background: rgba(94, 234, 212, 0.10) !important;
+  color: #5EEAD4 !important;
+  border: 1px solid rgba(94, 234, 212, 0.30) !important;
+  border-radius: 8px !important;
+}
+
+.budget-category-card .btn-secondary svg {
+  color: #5EEAD4 !important;
+  stroke: #5EEAD4 !important;
+}
+
+.budget-category-card .btn-secondary:hover {
+  background: rgba(94, 234, 212, 0.20) !important;
+  border-color: #5EEAD4 !important;
+}
+/* Analytics – Month selector */
+.dashboard-panel input[type="month"],
+.dashboard-panel input[type="date"] {
+  background: rgba(9, 31, 45, 0.92) !important;
+  color: #F1F5F9 !important;
+  border: 1px solid rgba(94, 234, 212, 0.25) !important;
+  border-radius: 10px !important;
+}
+
+.dashboard-panel input[type="month"]::-webkit-calendar-picker-indicator,
+.dashboard-panel input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.dashboard-panel input[type="month"]:focus,
+.dashboard-panel input[type="date"]:focus {
+  border-color: #5EEAD4 !important;
+  box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.10) !important;
+  outline: none;
+}

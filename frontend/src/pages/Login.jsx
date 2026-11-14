@@ -25,136 +25,161 @@ const Login = () => {
     }
   };
 
-  return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: 'var(--bg-main)',
-      padding: '1.5rem'
-    }}>
-      <div style={{
-        width: '100%',
-        maxWidth: '420px',
-        backgroundColor: '#ffffff',
-        borderRadius: 'var(--radius-lg)',
-        boxShadow: 'var(--shadow-lg)',
-        border: '1px solid var(--border-subtle)',
-        padding: '2.5rem 2rem'
-      }}>
-        {/* Brand Header */}
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{
-            width: '48px',
-            height: '48px',
-            borderRadius: '12px',
-            backgroundColor: 'var(--accent-primary)',
-            color: '#ffffff',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '1rem',
-            boxShadow: '0 4px 14px rgba(16, 185, 129, 0.35)'
-          }}>
-            <Wallet size={24} />
+ return (
+  <div className="login-page">
+    {/* Left Branding Section */}
+    <section className="login-brand-section">
+      <div className="login-brand-content">
+        <div className="login-brand">
+          <div className="login-brand-icon">
+            <Wallet size={23} />
           </div>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
-            Welcome to ARTHIK
-          </h2>
-          <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
-            Personal Finance Management System
+          <span>ARTHIK</span>
+        </div>
+
+        <div className="login-headline">
+          <span className="login-eyebrow">PERSONAL FINANCE, REIMAGINED</span>
+          <h1>
+            Make your money
+            <br />
+            work <span>smarter.</span>
+          </h1>
+          <p>
+            One place to understand your spending, build better saving habits,
+            and stay in control of your financial future.
           </p>
         </div>
 
+        {/* Decorative financial visual */}
+        <div className="login-visual">
+          <div className="login-visual-top">
+            <span>YOUR FINANCIAL OVERVIEW</span>
+            <span className="login-live-indicator">● LIVE VIEW</span>
+          </div>
+
+          <div className="login-visual-chart">
+            <div className="login-chart-label">
+              <span>Financial growth</span>
+              <strong>Stay on track</strong>
+            </div>
+
+            <div className="login-chart-bars">
+              {[35, 49, 42, 65, 54, 76, 68, 91, 78, 100, 86, 96].map((height, index) => (
+                <div
+                  key={index}
+                  className="login-chart-bar"
+                  style={{ height: `${height}%` }}
+                />
+              ))}
+            </div>
+
+            <div className="login-chart-months">
+              <span>JAN</span>
+              <span>MAR</span>
+              <span>MAY</span>
+              <span>JUL</span>
+              <span>SEP</span>
+              <span>DEC</span>
+            </div>
+          </div>
+
+          <div className="login-visual-footer">
+            <div>
+              <span className="login-footer-dot" />
+              <span>Track every transaction</span>
+            </div>
+            <div>
+              <span className="login-footer-dot" />
+              <span>Plan with purpose</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="login-brand-bottom">
+        <span>PERSONAL FINANCE MANAGEMENT</span>
+        <span>BUILT FOR BETTER FINANCIAL DECISIONS.</span>
+      </div>
+    </section>
+
+    {/* Right Login Section */}
+    <section className="login-form-section">
+      <div className="login-form-container">
+        <div className="login-form-heading">
+          <span className="login-eyebrow">YOUR ACCOUNT</span>
+          <h2>Welcome back.</h2>
+          <p>Sign in to continue to your financial dashboard.</p>
+        </div>
+
         {error && (
-          <div style={{
-            padding: '0.75rem 1rem',
-            backgroundColor: 'var(--expense-bg)',
-            color: 'var(--expense-red)',
-            borderRadius: 'var(--radius-md)',
-            fontSize: '0.8125rem',
-            marginBottom: '1.25rem',
-            textAlign: 'center'
-          }}>
+          <div className="login-error">
             {error}
           </div>
         )}
 
-        <form onSubmit={handleLogin}>
-          <div className="form-group">
-            <label className="form-label">Email Address</label>
-            <div style={{ position: 'relative' }}>
+        <form onSubmit={handleLogin} className="login-form">
+          <div className="login-field">
+            <label htmlFor="login-email">Email address</label>
+            <div className="login-input-wrapper">
+              <Mail size={18} />
               <input
+                id="login-email"
                 type="email"
                 required
-                className="form-control"
-                style={{ paddingLeft: '2.5rem' }}
                 placeholder="name@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <Mail size={16} style={{ position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
             </div>
           </div>
 
-          <div className="form-group">
-            <label className="form-label">Password</label>
-            <div style={{ position: 'relative' }}>
+          <div className="login-field">
+            <label htmlFor="login-password">Password</label>
+            <div className="login-input-wrapper">
+              <Lock size={18} />
               <input
+                id="login-password"
                 type="password"
                 required
-                className="form-control"
-                style={{ paddingLeft: '2.5rem' }}
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <Lock size={16} style={{ position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
             </div>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="btn btn-primary"
-            style={{ width: '100%', padding: '0.75rem', marginTop: '0.5rem', fontSize: '0.925rem' }}
+            className="login-submit-button"
           >
-            <span>{loading ? 'Authenticating...' : 'Sign In to Dashboard'}</span>
-            <ArrowRight size={16} />
+            <span>{loading ? 'Authenticating...' : 'Sign in to ARTHIK'}</span>
+            <ArrowRight size={18} />
           </button>
         </form>
 
-        <div style={{
-          marginTop: '1.75rem',
-          paddingTop: '1.25rem',
-          borderTop: '1px solid var(--border-subtle)',
-          textAlign: 'center',
-          fontSize: '0.8125rem',
-          color: 'var(--text-muted)'
-        }}>
-          Don't have an account?{' '}
-          <Link to="/register" style={{ color: 'var(--accent-primary)', fontWeight: 600, textDecoration: 'none' }}>
-            Create one here
-          </Link>
+        <div className="login-register">
+          <span>New to ARTHIK?</span>
+          <Link to="/register">Create an account <ArrowRight size={14} /></Link>
         </div>
 
-        {/* Demo credentials tip */}
-        <div style={{
-          marginTop: '1rem',
-          padding: '0.625rem 0.85rem',
-          backgroundColor: '#f8fafc',
-          borderRadius: 'var(--radius-md)',
-          fontSize: '0.75rem',
-          color: '#64748b',
-          textAlign: 'center',
-          border: '1px dashed var(--border-subtle)'
-        }}>
-          Demo User: <strong>akarsh@arthik.com</strong> / <strong>password123</strong>
+        <div className="login-demo">
+          <div className="login-demo-heading">
+            <Lock size={14} />
+            <span>DEMO ACCESS</span>
+          </div>
+          <p>Email: <strong>akarsh@arthik.com</strong></p>
+          <p>Password: <strong>password123</strong></p>
+        </div>
+
+        <div className="login-security-note">
+          <Lock size={13} />
+          <span>Your financial information stays protected.</span>
         </div>
       </div>
-    </div>
-  );
+    </section>
+  </div>
+);
 };
 
 export default Login;
